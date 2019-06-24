@@ -24,7 +24,7 @@ body = """<html>
 </html>""".format(
     software=os.environ.get('SERVER_SOFTWARE', default),
     script=os.environ.get('SCRIPT_NAME', default),
-    month=datetime.date.today().month,
+    month=datetime.date.today().strftime('%B'),
     date=datetime.date.today().day,
     year=datetime.date.today().year,
     client_ip=os.environ.get('REMOTE_ADDR', default)
