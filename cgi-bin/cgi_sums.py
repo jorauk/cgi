@@ -5,8 +5,10 @@ import cgitb
 cgitb.enable()
 
 form = cgi.FieldStorage()
-listval = form.getlist('operand')
+operands = form.getlist('operand')
+total = sum(map(float, operands))
 
 print("Content-type: text/plain")
 print()
-print("The numbers: {}".format(str(listval)))
+print("The numbers you are attempting to add: {}".format(str(operands)))
+print("The sum is: {}".format(str(total)))
