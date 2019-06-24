@@ -4,6 +4,9 @@ import cgitb
 
 cgitb.enable()
 
+form = cgi.FieldStorage()
+listval = form.getlist('operand')
+
 print("Content-type: text/plain")
 print()
-print("Your job is to make this work")
+print("The numbers: {}".format(str(listval)))
